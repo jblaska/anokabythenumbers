@@ -27,7 +27,11 @@ body {
 /* ===== HEADER / NAV ===== */
 
 .site-header {
-  background: var(--maroon);
+  background:
+    linear-gradient(120deg, rgba(94,7,43,0.94) 0%, rgba(94,7,43,0.80) 55%, rgba(94,7,43,0.90) 100%),
+    url('assets/main-street-banner.jpg');
+  background-size: cover;
+  background-position: center 60%;
   color: var(--white);
   padding: 1.5rem 2rem;
 }
