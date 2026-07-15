@@ -8,8 +8,21 @@ const FundView = {
       revenueLines: [],
       expenditureLines: [],
       totalRevenue: 0,
-      totalExpenditure: 0
+      totalExpenditure: 0,
+      fundDescriptions: {
+        'General Fund': 'This is the city\'s main operating fund — it pays for day-to-day services like police, fire, streets, parks, and city administration. It\'s funded primarily by property taxes and fees, and by law it must stay balanced (spending can\'t exceed revenue).',
+        'Water': 'This fund covers the city\'s water utility — pumping, treating, and delivering drinking water. It\'s paid for entirely by water bills, not property taxes. Anoka owns and runs this system itself rather than contracting it out.',
+        'Sewer': 'This fund covers wastewater collection and treatment. Like Water, it\'s paid for through user fees (your sewer bill) rather than property taxes, and is intended to be self-sustaining.',
+        'Electric': 'Anoka owns and operates its own electric utility — one of the more unusual things about this city compared to most Minnesota suburbs. This fund is paid for by electric bills, and covers everything from purchasing wholesale power to maintaining the local grid.',
+        'Liquor Store': 'The city operates its own municipal liquor store. This fund is paid for through store sales, and any profit is typically transferred to help fund other city services — so it isn\'t just self-sustaining, it can be a net contributor to the General Fund.'
+      }
     };
+  },
+  computed: {
+    fundDescription() {
+      return this.fundDescriptions[this.selectedFund] ||
+        'This fund tracks a specific category of city revenue and spending. Below is a breakdown of where its money comes from and where it goes.';
+    }
   },
   mounted() {
     this.funds = DataLoader.getFunds();
@@ -63,6 +76,8 @@ const FundView = {
         <select id="fund-select" v-model="selectedFund" @change="loadFund">
           <option v-for="f in funds" :key="f" :value="f">{{ f }}</option>
         </select>
+
+        <p class="narrative">{{ fundDescription }}</p>
 
         <div class="metrics-grid">
           <div class="metric-box">

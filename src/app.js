@@ -26,7 +26,7 @@ const App = {
       <nav class="nav-tabs">
         <button :class="{active: currentView === 'welcome'}" @click="currentView = 'welcome'">Welcome</button>
         <button :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">Dashboard</button>
-        <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Fund Breakdown</button>
+        <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Funds Breakdown</button>
         <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">What Changed</button>
         <button :class="{active: currentView === 'search'}" @click="currentView = 'search'">Search</button>
       </nav>
