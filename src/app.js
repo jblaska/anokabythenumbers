@@ -1,8 +1,8 @@
 const App = {
-  components: { Dashboard, FundView, Search, WhatChanged },
+  components: { Welcome, Dashboard, FundView, Search, WhatChanged },
   data() {
     return {
-      currentView: 'dashboard',
+      currentView: 'welcome',
       loaded: false,
       error: null
     };
@@ -24,6 +24,7 @@ const App = {
       </header>
 
       <nav class="nav-tabs">
+        <button :class="{active: currentView === 'welcome'}" @click="currentView = 'welcome'">Welcome</button>
         <button :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">Dashboard</button>
         <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Fund Breakdown</button>
         <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">What Changed</button>
@@ -34,6 +35,7 @@ const App = {
         <div v-if="error" class="card">{{ error }}</div>
         <div v-else-if="!loaded" class="card">Loading budget data...</div>
         <template v-else>
+          <Welcome v-if="currentView === 'welcome'"></Welcome>
           <Dashboard v-if="currentView === 'dashboard'"></Dashboard>
           <FundView v-if="currentView === 'funds'"></FundView>
           <WhatChanged v-if="currentView === 'changed'"></WhatChanged>
