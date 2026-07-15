@@ -1,0 +1,52 @@
+const App = {
+  components: { Dashboard, FundView, Search, WhatChanged },
+  data() {
+    return {
+      currentView: 'dashboard',
+      loaded: false,
+      error: null
+    };
+  },
+  async mounted() {
+    try {
+      await DataLoader.load();
+      this.loaded = true;
+    } catch (e) {
+      this.error = 'Could not load budget data. Please try again later.';
+      console.error(e);
+    }
+  },
+  template: `
+    <div>
+      <header class="site-header">
+        <h1>Anoka By The Numbers</h1>
+        <div class="tagline">Understanding the City of Anoka's budget, in plain language</div>
+      </header>
+
+      <nav class="nav-tabs">
+        <button :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">Dashboard</button>
+        <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Fund Breakdown</button>
+        <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">What Changed</button>
+        <button :class="{active: currentView === 'search'}" @click="currentView = 'search'">Search</button>
+      </nav>
+
+      <main class="main-content">
+        <div v-if="error" class="card">{{ error }}</div>
+        <div v-else-if="!loaded" class="card">Loading budget data...</div>
+        <template v-else>
+          <Dashboard v-if="currentView === 'dashboard'"></Dashboard>
+          <FundView v-if="currentView === 'funds'"></FundView>
+          <WhatChanged v-if="currentView === 'changed'"></WhatChanged>
+          <Search v-if="currentView === 'search'"></Search>
+        </template>
+      </main>
+
+      <footer class="site-footer">
+        Data sourced from the City of Anoka's official proposed budget documents.<br>
+        This site is an independent civic transparency project and is not an official City of Anoka website.
+      </footer>
+    </div>
+  `
+};
+
+Vue.createApp(App).mount('#app');
