@@ -28,12 +28,21 @@ body {
 
 .site-header {
   background:
-    linear-gradient(120deg, rgba(94,7,43,0.94) 0%, rgba(94,7,43,0.80) 55%, rgba(94,7,43,0.90) 100%),
-    url('assets/main-street-banner.jpg');
+    linear-gradient(120deg, rgba(94,7,43,0.80) 0%, rgba(94,7,43,0.55) 55%, rgba(94,7,43,0.75) 100%),
+    url('../assets/main-street-banner.jpg');
   background-size: cover;
   background-position: center 60%;
+  background-blend-mode: multiply;
   color: var(--white);
   padding: 1.5rem 2rem;
+}
+
+.site-header h1 {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.site-header .tagline {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 .site-header h1 {
