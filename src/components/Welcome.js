@@ -73,9 +73,9 @@ const Welcome = {
           Anoka offers something a little different from a lot of Twin Cities suburbs: a walkable,
           historic downtown along two rivers, city-owned utilities that keep infrastructure
           decisions local, and a strong sense of civic tradition — all within easy commuting
-          distance of Minneapolis and St. Paul. It's not a claim that Anoka is without challenges
-          (no city is), but the combination of small-town character, river geography, and local
-          control over core services is genuinely distinctive among Minnesota cities of similar size.
+          distance of Minneapolis and St. Paul. The combination of small-town character, river
+          geography, and local control over core services is genuinely distinctive among
+          Minnesota cities of similar size.
         </p>
         <p class="narrative">
           Understanding these features helps explain some of what you'll see in the budget —
