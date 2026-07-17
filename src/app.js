@@ -1,5 +1,5 @@
 const App = {
-  components: { Welcome, Dashboard, FundView, Search, WhatChanged },
+  components: { Welcome, Dashboard, FundView, DamProject, Search, WhatChanged },
   data() {
     return {
       currentView: 'welcome',
@@ -27,6 +27,7 @@ const App = {
         <button :class="{active: currentView === 'welcome'}" @click="currentView = 'welcome'">Welcome</button>
         <button :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">Dashboard</button>
         <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Funds Breakdown</button>
+        <button :class="{active: currentView === 'dam'}" @click="currentView = 'dam'">Dam Project</button>
         <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">What Changed</button>
         <button :class="{active: currentView === 'search'}" @click="currentView = 'search'">Search</button>
       </nav>
@@ -38,6 +39,7 @@ const App = {
           <Welcome v-if="currentView === 'welcome'"></Welcome>
           <Dashboard v-if="currentView === 'dashboard'"></Dashboard>
           <FundView v-if="currentView === 'funds'"></FundView>
+          <DamProject v-if="currentView === 'dam'"></DamProject>
           <WhatChanged v-if="currentView === 'changed'"></WhatChanged>
           <Search v-if="currentView === 'search'"></Search>
         </template>
