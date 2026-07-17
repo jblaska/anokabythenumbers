@@ -8,7 +8,6 @@ const DamProject = {
           <div><span class="label">Lawsuit:</span> Unresolved — no ruling issued</div>
           <div><span class="label">Funding secured:</span> ~$9.6M (state)</div>
           <div><span class="label">Funding requested:</span> ~$22.6M (state bonding)</div>
-          <div class="full-width"><span class="label">Next public step:</span> [Live survey link] · [Next Council/EDC meeting date]</div>
         </div>
       </div>
 
@@ -98,11 +97,20 @@ const DamProject = {
           <div class="chip"><span class="sw" style="background:var(--yellow);"></span> Recreation amenities (channel, lock, trails)</div>
         </div>
         <div class="narrative" style="margin-top:0.75rem; font-size:0.8rem;">
-          *<strong>Recreation Channel</strong> is the feasibility report's whitewater/recreation feature
-          line item — this is commonly referred to as "the surfing feature." Figure combines the report's
-          "River Surfing Feature" line ($3,653,000) and owner-procured Rapid Blocks ($203,000). "Recreation
-          Vessel Lock" and "Crest Gates" similarly combine base construction cost with owner-procured
-          equipment lines from the same table.
+          <strong>These are three separate physical features, priced separately:</strong>
+          <ul style="margin:0.5rem 0 0 1.1rem; padding:0; line-height:1.6;">
+            <li><strong>Recreation Channel*</strong> — the whitewater/recreation feature. Combines the
+              report's "River Surfing Feature" line ($3,653,000) with owner-procured Rapid Blocks
+              ($203,000), for $3,856,000 total.</li>
+            <li><strong>Recreation Vessel Lock</strong> — a separate structure: a small-craft lock that lets
+              kayaks and canoes pass around the dam (see "Navigation lock capacity" below). Combines base
+              construction ($1,480,000) with owner-procured lock gates ($1,600,000), for $3,080,000 total.</li>
+            <li><strong>Crest Gates</strong> — part of the dam's water-control system, unrelated to either
+              feature above. Combines base construction ($414,000) with owner-procured gate systems
+              ($1,144,000), for $1,558,000 total.</li>
+          </ul>
+          <div style="margin-top:0.5rem;">*"Recreation Channel" is the project's formal term; it's
+          commonly referred to as "the surfing feature."</div>
         </div>
         <div class="narrative" style="margin-top:0.5rem; font-size:0.8rem;">
           These are Class 4 estimate line items from the feasibility report's cost table (2024 dollars) and
