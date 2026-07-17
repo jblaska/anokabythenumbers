@@ -28,7 +28,7 @@ const App = {
         <button :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">Dashboard</button>
         <button :class="{active: currentView === 'funds'}" @click="currentView = 'funds'">Funds Breakdown</button>
         <button :class="{active: currentView === 'dam'}" @click="currentView = 'dam'">Dam Project</button>
-        <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">What Changed</button>
+        <button :class="{active: currentView === 'changed'}" @click="currentView = 'changed'">Year-To-Year</button>
         <button :class="{active: currentView === 'search'}" @click="currentView = 'search'">Search</button>
       </nav>
 
